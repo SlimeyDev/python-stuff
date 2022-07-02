@@ -2,7 +2,7 @@ k = 1
  
 s = 0
  
-for i in range(100000000000000000):
+for i in range(100000000):
  
     if i % 2 == 0:
         s += 4/k
