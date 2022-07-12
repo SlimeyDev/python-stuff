@@ -1,4 +1,5 @@
 from cryptography.fernet import Fernet
+import time
 
 message = input("Message: ")
 
@@ -14,3 +15,5 @@ print("encrypted string: ", encMessage)
 decMessage = fernet.decrypt(encMessage).decode()
 
 print("decrypted string: ", decMessage)
+
+time.sleep(100000)
