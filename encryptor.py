@@ -21,3 +21,10 @@ yn = input("Do you want to save this to a text file? (y/n): ")
 if yn == "y":
     file = open("data.txt", "w")
     file.write("Message:", message, "\nencrypted message: ", encMessage)
+elif yn == "n":
+    print("closing...")
+    time.sleep(2)
+else:
+    print("Invalid response!")
+    print("closing...")
+    time.sleep(2)
