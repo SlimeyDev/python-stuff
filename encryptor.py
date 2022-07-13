@@ -16,4 +16,5 @@ decMessage = fernet.decrypt(encMessage).decode()
 
 print("decrypted string: ", decMessage)
 
-time.sleep(100000)
+while True:
+    time.sleep(1)
