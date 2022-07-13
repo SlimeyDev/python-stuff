@@ -22,7 +22,10 @@ if yn == "y":
     file = open("data.txt", "w")
     write = "Message:", message, "\nencrypted message: ", encMessage
     file.write(str(write))
+    file.close()
     print("Saved to data.txt")
+    print("closing...")
+    time.sleep(2)
 elif yn == "n":
     print("closing...")
     time.sleep(2)
