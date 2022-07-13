@@ -16,5 +16,8 @@ decMessage = fernet.decrypt(encMessage).decode()
 
 print("decrypted string: ", decMessage)
 
-while True:
-    time.sleep(1)
+yn = input("Do you want to save this to a text file? (y/n): ")
+
+if yn == "y":
+    file = open("data.txt", "w")
+    file.write("Message:", message, "\nencrypted message: ", encMessage)
