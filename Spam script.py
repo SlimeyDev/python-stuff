@@ -28,7 +28,7 @@ for i in range(loop_times):
     # number = number+1
     # send(str(number))
     send(str(text))
-    time.sleep(3)
+    time.sleep(.1)
 
 current_time = time.strftime("%H:%M:%S", time.localtime())
 

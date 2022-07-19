@@ -4,6 +4,7 @@ import time
 message = input("Message: ")
 
 key = Fernet.generate_key()
+print("key: ", key)
 
 fernet = Fernet(key)
 
