@@ -11,11 +11,10 @@ fernet = Fernet(key)
 encMessage = fernet.encrypt(message.encode())
 
 print("original string: ", message)
+print("\n")
 print("encrypted string: ", encMessage)
 
 decMessage = fernet.decrypt(encMessage).decode()
-
-print("decrypted string: ", decMessage)
 
 yn = input("Do you want to save this to a text file? (y/n): ")
 
@@ -28,11 +27,11 @@ if yn == "y":
     file.close()
     print("Saved to data.txt")
     print("closing...")
-    time.sleep(2)
+    time.sleep(3)
 elif yn == "n":
     print("closing...")
-    time.sleep(2)
+    time.sleep(3)
 else:
     print("Invalid response!")
     print("closing...")
-    time.sleep(2)
+    time.sleep(3)
