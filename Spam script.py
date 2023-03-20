@@ -7,7 +7,9 @@ def send(msg):
     keyboard1 = KeyboardController()
 
     keyboard1.type(msg)
+    time.sleep(.5)
     keyboard1.press(Key.enter)
+    time.sleep(.1)
     keyboard1.release(Key.enter)
 
 
@@ -22,13 +24,14 @@ current_time = time.strftime("%H:%M:%S", time.localtime())
 print(f"Started! Time started: {current_time}")
 print('-'*33)
 
-number = 1836034
+number = 0
 
 for i in range(loop_times):
     # number = number+1
     # send(str(number))
+    # time.sleep(.5)
     send(str(text))
-    time.sleep(.1)
+    time.sleep(5)
 
 current_time = time.strftime("%H:%M:%S", time.localtime())
 
