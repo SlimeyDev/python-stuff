@@ -27,11 +27,11 @@ print('-'*33)
 number = 0
 
 for i in range(loop_times):
-    # number = number+1
-    # send(str(number))
-    # time.sleep(.5)
+    number = number+1
+    send(str(number))
+    time.sleep(.5)
     send(str(text))
-    time.sleep(5)
+    time.sleep(3)
 
 current_time = time.strftime("%H:%M:%S", time.localtime())
 

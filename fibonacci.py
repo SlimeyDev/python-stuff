@@ -1,6 +1,6 @@
 prst = 0
 prev1 = 0
-for x in range(100):
+for x in range(100000):
   if (prst == 0 and prev1 == 0):
     prev1 = 0
     prst = 1
