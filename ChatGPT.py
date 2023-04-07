@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "####"
 
 messages = []
 system_msg = "chat"
