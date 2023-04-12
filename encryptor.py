@@ -33,5 +33,6 @@ elif yn == "n":
     time.sleep(3)
 else:
     print("Invalid response!")
+    time.sleep(1)
     print("closing...")
     time.sleep(3)
