@@ -26,7 +26,7 @@ if yn == "y":
     file.write(str(encMessage))
     file.write("\n")
     file.write("key: ")
-    file.write(key)
+    file.write(str(key))
     file.close()
     print("Saved to data.txt")
     print("closing...")

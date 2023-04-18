@@ -4,6 +4,7 @@ from datetime import datetime
 import socket
 import uuid
 import re
+import time
 
 def get_size(bytes, suffix="B"):
     factor = 1024
@@ -70,3 +71,7 @@ def System_information():
 if __name__ == "__main__":
 
     System_information()
+    print("================================================================================================")
+    input("Close application?(Type anything then press enter when you are ready): ")
+    print("closing...")
+    time.sleep(3)
