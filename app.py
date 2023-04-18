@@ -1,12 +1,6 @@
 rollNumber = int(input("Roll number:\t"))
 name = str(input("Name:\t"))
 
-# for i in range(5):
-#     marks = input(f"Marks for subject {i+1}:\t")
-
-#     global totalMarks
-#     totalMarks = marks
-
 marks1 = float(input("Marks for subject 1 out of 100:\t"))
 marks2 = float(input("Marks for subject 2 out of 100:\t"))
 marks3 = float(input("Marks for subject 3 out of 100:\t"))
