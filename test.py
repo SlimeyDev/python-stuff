@@ -1,23 +1,32 @@
-import socket
-import psutil
+import tkinter as tk
+from tkinter import messagebox
+import winreg
+import os
 
-def get_network_info():
-    hostname = socket.gethostname()
-    ip_addresses = [ip for ip in socket.gethostbyname_ex(hostname)[2]]
-    network_interfaces = psutil.net_if_addrs()
+# Registry path and value
+REG_PATH = r"Software\Microsoft\Windows\CurrentVersion\PrecisionTouchPad"
+REG_NAME = "AAPThreshold"
 
-    network_info = f"Hostname: {hostname}\n"
-    network_info += "IP Addresses:\n"
-    for ip in ip_addresses:
-        network_info += f"{ip}\n"
-    network_info += "\nNetwork Interfaces:\n"
-    for interface, addrs in network_interfaces.items():
-        network_info += f"{interface}:\n"
-        for addr in addrs:
-            network_info += f"{addr.family.name} - {addr.address}\n"
+# Update registry with new sensitivity
+def set_sensitivity(value):
+    try:
+        value = int(value)
+        reg = winreg.OpenKey(winreg.HKEY_CURRENT_USER, REG_PATH, 0, winreg.KEY_SET_VALUE)
+        winreg.SetValueEx(reg, REG_NAME, 0, winreg.REG_DWORD, value)
+        winreg.CloseKey(reg)
+        #messagebox.showinfo("Success", "Sensitivity changed! You may need to log out and back in for it to apply.")
+        print(reg)
+    except Exception as e:
+        messagebox.showerror("Error", str(e))
 
-    return network_info
+# GUI setup
+root = tk.Tk()
+root.title("Touchpad Sensitivity")
 
-# Example usage:
-network_specs = get_network_info()
-print(network_specs)
+tk.Label(root, text="Touchpad Sensitivity").pack(pady=10)
+
+slider = tk.Scale(root, from_=0, to=3, orient="horizontal", length=300,
+                  label="0 = Most Sensitive, 3 = Least", command=set_sensitivity)
+slider.pack(pady=20)
+
+root.mainloop()
